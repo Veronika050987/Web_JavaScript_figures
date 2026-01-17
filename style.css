@@ -6,11 +6,11 @@ body {
     background-attachment: fixed;
 }
 
-canvas {
+/*canvas {
     border: 1px solid #ccc;
     margin-top: 15px;
     display: block;  Чтобы canvas не создавал лишних отступов 
-}
+}*/
 
 input[type="number"] {
     padding: 5px;

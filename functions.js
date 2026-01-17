@@ -11,7 +11,7 @@
         // Проверка ввода: теперь до 25, чтобы не делать слишком большой Canvas
         if (isNaN(numRowsCols) || numRowsCols < 1 || numRowsCols > 25) 
         {
-            alert("Пожалуйста, введите корректное количество строк/столбцов (от 1 до 25).");
+            alert("Please, enter square size!");
             return;
         }
         
