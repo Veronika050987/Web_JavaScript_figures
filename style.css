@@ -1,0 +1,29 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: Roboto Condensed;
+    font-size: 30px;
+    background-image: linear-gradient(to bottom right, lightskyblue, pink);
+    background-attachment: fixed;
+}
+
+canvas {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    display: block;  Чтобы canvas не создавал лишних отступов 
+}
+
+input[type="number"] {
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+}
+/* Стили для контейнера, чтобы холст был виден */
+#square-result {
+    min-height: 150px; /* Чтобы контейнер не схлопывался, если нет холста */
+}
