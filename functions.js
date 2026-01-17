@@ -56,3 +56,56 @@
 
     drawButton.addEventListener('click', drawCharacterSquare);
 });
+
+//leftCornerEquilateralTriangle//
+
+function bottomLeftRightAngledTriangle() 
+{
+    const heightInput = document.getElementById('bottom-left-right-angled-triangle-height');
+    const resultDiv = document.getElementById('bottom-left-right-angled-triangle-result');
+    const height = parseInt(heightInput.value, 10);
+
+    if (isNaN(height) || height < 1) 
+    {
+      resultDiv.textContent = '';
+      return;
+    }
+
+    // Построение треугольника слева: строки с 1, 2, ..., height звездочек
+    let lines = [];
+    for (let i = 1; i <= height; i++) 
+    {
+      const stars = Array(i).fill('*').join(' ');
+      lines.push(stars);
+    }
+    resultDiv.textContent = lines.join('\n');
+ }
+
+    //rightCornerEquilateralTriangle//
+
+    function makeRow(i) 
+ {
+    return Array(i).fill('*').join(' ');
+ }
+
+    function drawLeftAlignedTriangle(height) {
+    const lines = [];
+    for (let i = 1; i <= height; i++) {
+      lines.push(makeRow(i));
+    }
+    return lines.join('\\n');
+  }
+
+    function drawLeftAlignedTriangleResult() {
+    const heightInput = document.getElementById('triangle-height-left');
+    const height = parseInt(heightInput.value, 10);
+    const leftDiv = document.getElementById('triangle-left-result');
+
+    if (isNaN(height) || height < 1) {
+      leftDiv.textContent = '';
+      shiftedDiv.textContent = '';
+      return;
+    }
+
+    leftDiv.textContent = drawLeftAlignedTriangle(height);
+  }

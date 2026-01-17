@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Figures</h1>
+
     <details>
         <summary>Square</summary>
         <br>
@@ -18,6 +19,28 @@
         <div id="square-result"></div>
         <button id="drawButton">Draw square</button>
     </details>
+
+    <details>
+        <summary>Bottom left right-angled triangle</summary>
+        <br>
+        <label for="bottom-left-right-angled-triangle-height">Choose triangle height (in characters):</label>
+        <input type="number" id="bottom-left-right-angled-triangle-height" min="4" placeholder="Triangle height" onchange="bottomLeftRightAngledTriangle()">
+        <br>
+        <div id="bottom-left-right-angled-triangle-result" style="font-family: monospace; color: yellow; white-space: pre;">
+        </div>
+    </details>
+
+
+    <details>
+        <summary>Right corner equilateral triangle</summary>
+        <br>
+        <label for="right-corner-triangle-height">Choose triangle height (in characters):</label>
+        <input type="number" id="right-corner-triangle-height" min="4" placeholder="Triangle height" onchange="drawLeftAlignedTriangleResult()()">
+        <br>
+        <div id="right-corner-triangle-result" style="font-family: monospace; color: mistyrose; white-space: pre; line-height: 1.25;">
+        </div>
+    </details>
+
     <script src="functions.js"></script>
 </body>
 </html>
