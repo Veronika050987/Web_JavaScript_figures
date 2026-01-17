@@ -8,13 +8,7 @@
     {
         let numRowsCols = parseInt(sizeInput.value);
 
-        // Проверка ввода: теперь до 25, чтобы не делать слишком большой Canvas
-        if (isNaN(numRowsCols) || numRowsCols < 1 || numRowsCols > 25) 
-        {
-            alert("Please, enter square size!");
-            return;
-        }
-        
+      
         resultContainer.innerHTML = '';
 
         const canvas = document.createElement('canvas');
@@ -34,7 +28,7 @@
 
             // Настройка шрифта
             ctx.font = `${fontSize}px monospace`;
-            ctx.fillStyle = 'black';
+            ctx.fillStyle = 'green';
             ctx.textBaseline = 'top'; // Устанавливаем базовую линию вверху (более предсказуемо для сетки)
 
             // Начальная позиция для первого символа (верхний левый угол)
@@ -46,7 +40,6 @@
             {
                 for (let col = 0; col < numRowsCols; col++) 
                 {
-                    
                     // Вычисляем позицию: умножаем индекс на размер шрифта
                     const textX = startX + (col * fontSize);
                     const textY = startY + (row * fontSize);
@@ -60,7 +53,4 @@
     }
 
     drawButton.addEventListener('click', drawCharacterSquare);
-
-    // Нарисовать квадрат по умолчанию
-    drawCharacterSquare();
 });
