@@ -1,4 +1,6 @@
 // JavaScript source code
+
+//square//
    document.addEventListener('DOMContentLoaded', function() {
     const sizeInput = document.getElementById('squareSizeInput');
     const drawButton = document.getElementById('drawButton');
