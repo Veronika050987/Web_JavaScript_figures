@@ -1,6 +1,6 @@
 // JavaScript source code
 
-//square//
+//1. square//
    document.addEventListener('DOMContentLoaded', function() {
     const sizeInput = document.getElementById('squareSizeInput');
     const drawButton = document.getElementById('drawButton');
@@ -57,7 +57,7 @@
     drawButton.addEventListener('click', drawCharacterSquare);
 });
 
-//leftCornerEquilateralTriangle//
+//2.leftBottomCornerRightAngledTriangle//
 
 function bottomLeftRightAngledTriangle() 
 {
@@ -81,31 +81,47 @@ function bottomLeftRightAngledTriangle()
     resultDiv.textContent = lines.join('\n');
  }
 
-    //rightCornerEquilateralTriangle//
+//3.Upper left right-angled triangle//
 
-    function makeRow(i) 
- {
-    return Array(i).fill('*').join(' ');
- }
+function upperLeftRightAngledTriangle()
+{
+    const height = document.getElementById('upper-left-and-right-angled-triangle-height').value;
+    const resultDiv = document.getElementById('upper-left-and-right-angled-triangle-result');
+    
+    let result = '';
 
-    function drawLeftAlignedTriangle(height) {
-    const lines = [];
-    for (let i = 1; i <= height; i++) {
-      lines.push(makeRow(i));
+    // Рисуем первый треугольник
+    for (let i = height; i > 0; i--) 
+    {
+        result += '* '.repeat(i) + '\n';
     }
-    return lines.join('\\n');
-  }
+    result += '\n'; // добавляем пустую строку между треугольниками
 
-    function drawLeftAlignedTriangleResult() {
-    const heightInput = document.getElementById('triangle-height-left');
-    const height = parseInt(heightInput.value, 10);
-    const leftDiv = document.getElementById('triangle-left-result');
-
-    if (isNaN(height) || height < 1) {
-      leftDiv.textContent = '';
-      shiftedDiv.textContent = '';
-      return;
+    // Рисуем второй треугольник
+    for (let i = 0; i < height; i++) 
+    {
+        result += ' '.repeat(i * 2) + '* '.repeat(height - i) + '\n';
     }
 
-    leftDiv.textContent = drawLeftAlignedTriangle(height);
-  }
+    resultDiv.textContent = result;
+}
+
+    //4.Bottom right right-angled triangle//
+function bottomRightRightAngledTriangle() 
+{
+    const rows = document.getElementById('triangle-rows').value;
+    const triangleDiv = document.getElementById('triangle');
+    let triangle = '';
+
+    // Генерация треугольника
+    for (let i = 0; i < rows; i++)
+    {
+        // Добавление пробелов перед звездочками
+        const spaces = ' '.repeat(rows - i - 1);
+        const stars = '*'.repeat(i + 1);
+        triangle += spaces + stars + '\n';
+    }
+
+    // Обновление вывода
+    triangleDiv.textContent = triangle;
+}

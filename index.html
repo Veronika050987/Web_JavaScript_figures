@@ -11,19 +11,21 @@
     <h1>Figures</h1>
 
     <details>
-        <summary>Square</summary>
+        <summary><img width="130" height="130" src="img/SQ.jpg">Square</summary>
         <br>
         <label for="square">Choose square size (in pixels):</label>
         <input type="number" id="squareSizeInput" min="20" max="300" placeholder="Square size">
         <br>
         <div id="square-result"></div>
         <button id="drawButton">Draw square</button>
+        <br>
+        <br>
     </details>
 
     <details>
-        <summary>Bottom left right-angled triangle</summary>
+        <summary><img width="130" height="130" src="img/RCT.jpg">Bottom left right-angled triangle</summary>
         <br>
-        <label for="bottom-left-right-angled-triangle-height">Choose triangle height (in characters):</label>
+        <label for="bottom-left-right-angled-triangle-height">Choose triangle rows (in characters):</label>
         <input type="number" id="bottom-left-right-angled-triangle-height" min="4" placeholder="Triangle height" onchange="bottomLeftRightAngledTriangle()">
         <br>
         <div id="bottom-left-right-angled-triangle-result" style="font-family: monospace; color: yellow; white-space: pre;">
@@ -32,12 +34,23 @@
 
 
     <details>
-        <summary>Right corner equilateral triangle</summary>
+        <summary><img width="180" height="130" src="img/always.png">Upper left and right aligned right-angled triangle</summary>
         <br>
-        <label for="right-corner-triangle-height">Choose triangle height (in characters):</label>
-        <input type="number" id="right-corner-triangle-height" min="4" placeholder="Triangle height" onchange="drawLeftAlignedTriangleResult()()">
+        <label for="upper-left-and-right-angled-triangle-height">Choose triangle rows (in characters):</label>
+        <input type="number" id="upper-left-and-right-angled-triangle-height" min="4" placeholder="Triangle height" onchange="upperLeftRightAngledTriangle()">
         <br>
-        <div id="right-corner-triangle-result" style="font-family: monospace; color: mistyrose; white-space: pre; line-height: 1.25;">
+        <div id="upper-left-and-right-angled-triangle-result" style="font-family: monospace; color:blueviolet; white-space: pre;">
+        </div>
+        <br>
+    </details>
+
+    <details>
+        <summary><img width="130" height="130" src="img/hippo.jpg">Bottom right right-angled triangle</summary>
+        <br>
+        <label for="triangle-rows">Choose triangle rows (in characters):</label>
+        <input type="number" id="triangle-rows" min="4" placeholder="Triangle height" onchange="bottomRightRightAngledTriangle()">
+        <br>
+        <div id="triangle" style="font-family: monospace; color:crimson; white-space: pre;">
         </div>
     </details>
 
