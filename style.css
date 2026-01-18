@@ -12,7 +12,8 @@ body {
     display: block;  Чтобы canvas не создавал лишних отступов 
 }*/
 
-input[type="number"] {
+input[type="number"] 
+{
     padding: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -25,14 +26,24 @@ button {
     cursor: pointer;
 }
 /* Стили для контейнера, чтобы холст был виден */
-#square-result {
+#square-result 
+{
     min-height: 150px; /* Чтобы контейнер не схлопывался, если нет холста */
 }
 
-#rhombus {
-    /*font-family: monospace;*/ /* Важно для ровных символов */
-    /*color: brown;*/
-    /*white-space: pre;*/ /* Очень важно: сохраняет пробелы и переносы строк */
- /*   margin-top: 15px;*/
+#rhombus 
+{
+    font-family: monospace;
+    color: brown;
+    white-space: pre;
+    margin-top: 15px;
     font-size: 18px; /* Размер шрифта для ромба */
+}
+
+#checkerboard {
+    font-family: monospace;
+    white-space: pre;
+    margin-top: 15px;
+    font-size: 18px;
+    color: #C71585;
 }

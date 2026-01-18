@@ -246,3 +246,86 @@ document.addEventListener('DOMContentLoaded', function () {
     // Делаем функцию доступной глобально
     window.drawRhombus2 = drawRhombus2;
 });
+
+/*  chessboard*/
+document.addEventListener('DOMContentLoaded', function () {
+    const sizeInput = document.getElementById('board-size');
+    const boardContainer = document.getElementById('checkerboard');
+
+    // Функция для рисования шахматной доски (N x N)
+    function drawCheckerboard() {
+        let size = parseInt(sizeInput.value);
+
+        if (isNaN(size) || size < 2 || size > 20) {
+            boardContainer.textContent = "Please enter a size between 2 and 20.";
+            return;
+        }
+
+        let boardString = '';
+        const char1 = '+';
+        const char2 = '-';
+
+        // Итерируем по строкам (i)
+        for (let i = 0; i < size; i++) {
+            let rowString = '';
+
+            // Итерируем по столбцам (j)
+            for (let j = 0; j < size; j++) {
+
+                // Ключевая логика: Если сумма индексов четная, используем char1, иначе char2
+                if ((i + j) % 2 === 0)
+                {
+                    rowString += char1 + ' '; // Добавляем пробел для разделения символов
+                } 
+                else
+                {
+                    rowString += char2 + ' ';
+                }
+            }
+
+            // Убираем лишний пробел в конце строки
+            boardString += rowString.trimEnd() + '\n';
+        }
+
+        // Обновление вывода
+        boardContainer.textContent = boardString;
+    }
+
+    // Делаем функцию доступной глобально
+    window.drawCheckerboard = drawCheckerboard;
+});
+
+/*PascalsPyramid*/
+
+function printPascalsPyramid()
+{
+    const rows = document.getElementById("rows").value; // Получаем значение строк
+    const triangleContainer = document.getElementById("Pascal_Triangle"); // Находим контейнер для треугольника
+    triangleContainer.innerHTML = ''; // Очищаем контейнер перед добавлением нового
+
+    for (let i = 0; i < rows; i++)
+    {
+        let output = '';
+        for (let j = 0; j <= i; j++)
+        {
+            output += pascalNumber(i, j) + ' ';
+        }
+        // Создаем новый элемент абзаца и добавляем его в контейнер
+        const p = document.createElement('p');
+        p.textContent = output;
+        triangleContainer.appendChild(p);
+    }
+}
+
+function pascalNumber(row, column)
+{
+    if (column === 0 || column === row)
+    {
+        return 1;
+    }
+    else
+    {
+        return pascalNumber(row - 1, column - 1) +
+            pascalNumber(row - 1, column);
+    }
+}
