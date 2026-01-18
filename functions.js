@@ -306,7 +306,7 @@ function printPascalsPyramid()
     for (let i = 0; i < rows; i++)
     {
         let output = '';
-        for (let j = 0; j <= i; j++)
+        for (let j = 0; j <= i; j++) 
         {
             output += pascalNumber(i, j) + ' ';
         }
