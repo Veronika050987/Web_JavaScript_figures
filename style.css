@@ -17,6 +17,7 @@ input[type="number"] {
     margin-top: 10px;
     margin-bottom: 10px;
     width: 150px;
+    font-size: 20px;
 }
 
 button {
@@ -26,4 +27,12 @@ button {
 /* Стили для контейнера, чтобы холст был виден */
 #square-result {
     min-height: 150px; /* Чтобы контейнер не схлопывался, если нет холста */
+}
+
+#rhombus {
+    /*font-family: monospace;*/ /* Важно для ровных символов */
+    /*color: brown;*/
+    /*white-space: pre;*/ /* Очень важно: сохраняет пробелы и переносы строк */
+ /*   margin-top: 15px;*/
+    font-size: 18px; /* Размер шрифта для ромба */
 }

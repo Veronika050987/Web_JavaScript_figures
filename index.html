@@ -8,12 +8,14 @@
     <link rel="icon" href="figure.ico">
 </head>
 <body>
-    <h1>Figures</h1>
+    <!--<h1>Figures</h1>-->
+    <h1><img width="270" height="130" src="figures.jpg"></h1>
 
     <details>
         <summary><img width="130" height="130" src="img/SQ.jpg">Square</summary>
         <br>
         <label for="square">Choose square size (in pixels):</label>
+        <br>
         <input type="number" id="squareSizeInput" min="20" max="300" placeholder="Square size">
         <br>
         <div id="square-result"></div>
@@ -23,18 +25,19 @@
     </details>
 
     <details>
-        <summary><img width="130" height="130" src="img/RCT.jpg">Bottom left right-angled triangle</summary>
+        <summary>Bottom left right-angled triangle<img width="130" height="130" src="img/RCT.jpg"></summary>
         <br>
         <label for="bottom-left-right-angled-triangle-height">Choose triangle rows (in characters):</label>
         <input type="number" id="bottom-left-right-angled-triangle-height" min="4" placeholder="Triangle height" onchange="bottomLeftRightAngledTriangle()">
         <br>
         <div id="bottom-left-right-angled-triangle-result" style="font-family: monospace; color: yellow; white-space: pre;">
         </div>
+        <br>
     </details>
 
 
     <details>
-        <summary><img width="180" height="130" src="img/always.png">Upper left and right aligned right-angled triangle</summary>
+        <summary>Upper left and right aligned right-angled triangle<img width="185" height="130" src="img/always.png"></summary>
         <br>
         <label for="upper-left-and-right-angled-triangle-height">Choose triangle rows (in characters):</label>
         <input type="number" id="upper-left-and-right-angled-triangle-height" min="4" placeholder="Triangle height" onchange="upperLeftRightAngledTriangle()">
@@ -45,13 +48,32 @@
     </details>
 
     <details>
-        <summary><img width="130" height="130" src="img/hippo.jpg">Bottom right right-angled triangle</summary>
+        <summary>Bottom right right-angled triangle<img width="130" height="130" src="img/hippo.jpg"></summary>
         <br>
         <label for="triangle-rows">Choose triangle rows (in characters):</label>
         <input type="number" id="triangle-rows" min="4" placeholder="Triangle height" onchange="bottomRightRightAngledTriangle()">
         <br>
         <div id="triangle" style="font-family: monospace; color:crimson; white-space: pre;">
         </div>
+        <br>
+    </details>
+
+    <details>
+        <summary><img width="130" height="130" src="img/rhombus.jpg">Rhombus with *</summary>
+        <br>
+        <label for="rhombus-side">Choose rhombus side (number of characters high/wide):</label>
+        <input type="number" id="rhombus-side" min="4" placeholder="Rhombus side" onchange="drawRhombus()">
+        <br>
+        <div id="rhombus"></div>
+    </details>
+
+    <details>
+        <summary><img width="130" height="130" src="img/rhombus.jpg">Rhombus with /</summary>
+        <br>
+        <label for="rhombus-2-side">Choose rhombus side (number of characters high/wide):</label>
+        <input type="number" id="rhombus-2-side" min="4" placeholder="Rhombus side" onchange="drawRhombus2()">
+        <br>
+        <div id="rhombus-result" style="font-family: monospace; color:rosybrown; white-space: pre;"></div>
     </details>
 
     <script src="functions.js"></script>

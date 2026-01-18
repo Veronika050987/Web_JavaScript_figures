@@ -125,3 +125,124 @@ function bottomRightRightAngledTriangle()
     // Обновление вывода
     triangleDiv.textContent = triangle;
 }
+
+//4.rhombus 1//
+
+document.addEventListener('DOMContentLoaded', function () {
+    const sideInput = document.getElementById('rhombus-side');
+    const rhombusContainer = document.getElementById('rhombus');
+
+    // 1. Определяем функцию drawRhombus так же, как вы определили свою для треугольника
+    function drawRhombus() {
+        // Получаем размер (сторона = половина высоты ромба)
+        let side = parseInt(sideInput.value);
+
+        // Проверка ввода
+        if (isNaN(side) || side < 1 || side > 20) {
+            rhombusContainer.textContent = "Invalid side length.";
+            return;
+        }
+
+        let rhombusString = '';
+        const char = '*'; // Символ для рисования
+
+        // --- 1. Верхняя половина ромба (включая самую широкую строку) ---
+        for (let i = 1; i <= side; i++) {
+            // Пробелы: уменьшаются (side - i)
+            const spaces = ' '.repeat(side - i);
+            // Звезды: увеличиваются (2 * i - 1)
+            const stars = char.repeat(2 * i - 1);
+
+            rhombusString += spaces + stars + '\n';
+        }
+
+        // --- 2. Нижняя половина ромба (исключая самую широкую строку) ---
+        for (let i = side - 1; i >= 1; i--) {
+            // Пробелы: увеличиваются (side - i)
+            const spaces = ' '.repeat(side - i);
+            // Звезды: уменьшаются (2 * i - 1)
+            const stars = char.repeat(2 * i - 1);
+
+            rhombusString += spaces + stars + '\n';
+        }
+
+        // Обновление вывода
+        rhombusContainer.textContent = rhombusString;
+    }
+
+    // Делаем функцию доступной глобально, чтобы ее мог вызвать HTML (через onchange="drawRhombus()")
+    window.drawRhombus = drawRhombus;
+
+    // Выполнить функцию при первой загрузке
+    drawRhombus();
+});
+
+//4.rhombus 2//
+document.addEventListener('DOMContentLoaded', function () {
+    const sideInput = document.getElementById('rhombus-2-side');
+    const rhombusContainer = document.getElementById('rhombus-result');
+
+    function drawRhombus2() {
+        let side = parseInt(sideInput.value);
+
+        if (isNaN(side) || side < 2 || side > 20) {
+            rhombusContainer.textContent = "Please enter a side value between 2 and 20.";
+            return;
+        }
+
+        let rhombusString = '';
+        const spaceChar = ' ';
+
+        // ------------------------------------------------------
+        // 1. ВЕРХНЯЯ ПОЛОВИНА (ВКЛЮЧАЯ САМУЮ ШИРОКУЮ СТРОКУ)
+        // i идет от 1 до side.
+        // ------------------------------------------------------
+        for (let i = 1; i <= side; i++) {
+            // Пробелы перед символами (уменьшаются)
+            const leadingSpaces = spaceChar.repeat(side - i);
+
+            let line = '';
+
+            if (i === 1) {
+                // Самая верхняя точка: /\
+                line = leadingSpaces + '/' + '\\' + '\n';
+            } else {
+                // Промежуточные строки и центр: /....\
+                // Внутренние пробелы: 2 * (i - 2) + 2, что упрощается до 2 * (i - 1)
+                const innerSpaces = spaceChar.repeat(2 * (i - 1));
+                line = leadingSpaces + '/' + innerSpaces + '\\' + '\n';
+            }
+
+            rhombusString += line;
+        }
+
+        // ------------------------------------------------------
+        // 2. НИЖНЯЯ ПОЛОВИНА (ОТСТРАНЕНИЕ ОТ ЦЕНТРА)
+        // i идет от side - 1 до 1. (Исключаем центральную строку, которая уже нарисована)
+        // ------------------------------------------------------
+        for (let i = side; i >= 1; i--) {
+            // Пробелы перед символами (увеличиваются, т.к. i уменьшается)
+            const leadingSpaces = spaceChar.repeat(side - i);
+
+            let line = '';
+
+            if (i === 1) {
+                // Самая нижняя точка: \/
+                line = leadingSpaces + '\\' + '/' + '\n';
+            } else {
+                // Промежуточные строки: \..../
+                // Пробелы внутри зеркально соответствуют верхней половине
+                const innerSpaces = spaceChar.repeat(2 * (i - 1));
+                line = leadingSpaces + '\\' + innerSpaces + '/' + '\n';
+            }
+
+            rhombusString += line;
+        }
+
+        // Обновление вывода
+        rhombusContainer.textContent = rhombusString;
+    }
+
+    // Делаем функцию доступной глобально
+    window.drawRhombus2 = drawRhombus2;
+});
